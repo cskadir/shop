@@ -18,7 +18,9 @@ public class ShopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        coffeeService.run();
+        while (true){
+            coffeeService.run();
+        }
 
     }
 }

@@ -26,8 +26,9 @@ public class DataService {
                 Ingredients.ESPRESSO, 2)
         ));
         coffeeList.add(new Coffee("Cappuccino", 12, Map.of(
-                Ingredients.ESPRESSO, 2,
-                Ingredients.HOTWATER, 2)
+                Ingredients.ESPRESSO,1,
+                Ingredients.STEAMEDMILK, 2,
+                Ingredients.MILKFOAM, 2)
         ));
         coffeeList.add(new Coffee("Caffe Latte", 12, Map.of(
                 Ingredients.ESPRESSO, 1,
@@ -36,8 +37,8 @@ public class DataService {
         ));
         coffeeList.add(new Coffee("Mocha", 13, Map.of(
                 Ingredients.ESPRESSO, 1,
-                Ingredients.STEAMEDMILK, 2,
-                Ingredients.MILKFOAM, 2,
+                Ingredients.STEAMEDMILK, 1,
+                Ingredients.MILKFOAM, 1,
                 Ingredients.HOTCHOCOLATE, 2)
         ));
         coffeeList.add(new Coffee("Americano", 10, Map.of(
@@ -64,7 +65,7 @@ public class DataService {
                 cf = coffeeList.stream().filter(c -> c.getName().equals("Double Espresso")).findAny();
                 return cf.get();
             case 3:
-                cf = coffeeList.stream().filter(c -> c.getName().equals("Cappucino")).findAny();
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Cappuccino")).findAny();
                 return cf.get();
             case 4:
                 cf = coffeeList.stream().filter(c -> c.getName().equals("Caffe Latte")).findAny();

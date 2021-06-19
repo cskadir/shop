@@ -34,7 +34,8 @@ public class CoffeeService {
     public void run() {
         messageService.showMenu(dataService.getCoffeeList());
         int ch = getOrder();
-        getCoffee(ch);
+        Coffee selected=getCoffee(ch);
+        messageService.showOrderDetail(selected);
     }
 
 }
