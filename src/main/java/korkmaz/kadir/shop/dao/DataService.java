@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 public class DataService {
@@ -51,5 +52,34 @@ public class DataService {
 
     public List<Coffee> getCoffeeList() {
         return coffeeList;
+    }
+
+    public Coffee findCoffee(int i) {
+        Optional<Coffee> cf;
+        switch (i) {
+            case 1:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Espresso")).findAny();
+                return cf.get();
+            case 2:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Double Espresso")).findAny();
+                return cf.get();
+            case 3:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Cappucino")).findAny();
+                return cf.get();
+            case 4:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Caffe Latte")).findAny();
+                return cf.get();
+            case 5:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Mocha")).findAny();
+                return cf.get();
+            case 6:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Americano")).findAny();
+                return cf.get();
+            case 7:
+                cf = coffeeList.stream().filter(c -> c.getName().equals("Hot Water")).findAny();
+                return cf.get();
+            default:
+                return null;
+        }
     }
 }

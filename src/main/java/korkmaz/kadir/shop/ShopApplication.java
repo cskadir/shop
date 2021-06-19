@@ -1,6 +1,6 @@
 package korkmaz.kadir.shop;
 
-import korkmaz.kadir.shop.dao.DataService;
+import korkmaz.kadir.shop.service.CoffeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @RequiredArgsConstructor
 public class ShopApplication implements CommandLineRunner {
 
-    private final DataService dataService;
+    private final CoffeeService coffeeService;
 
     public static void main(String[] args) {
         SpringApplication.run(ShopApplication.class, args);
@@ -18,6 +18,7 @@ public class ShopApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        coffeeService.run();
 
     }
 }
